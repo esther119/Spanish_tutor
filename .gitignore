@@ -23,9 +23,9 @@ yarn-debug.log*
 yarn-error.log*
 
 #secrets
-spanish-tutor-406601-8b5807bdc791.json
+back-end/GOOGLE_APPLICATION_CREDENTIALS.json
 
 #api testing 
-sync-request.json
+back-end/sync-request.json
 
 back-end/venv
