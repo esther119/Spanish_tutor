@@ -1,21 +1,49 @@
-import React from 'react';
-// import useAudioRecorder from './useAudioRecorder';
+import React, { useState } from 'react';
 
-const AudioRecorderComponent = () => {
-    // const { isRecording, startRecording, stopRecording, audioData } = useAudioRecorder();
-    const isRecording = false;
-    const startRecording = () => {};
-    const stopRecording = () => {};
+function AudioRecorder({ onRecordingComplete }) {
+    const [isRecording, setIsRecording] = useState(false); // check if recording 
+    const [mediaRecorder, setMediaRecorder] = useState(null); // hold the elements we record 
 
+    const startRecording = () => {
+        navigator.mediaDevices.getUserMedia({ audio: true }) // Requests access to the user's audio input devices (microphone).
+            .then(stream => {
+                const newMediaRecorder = new MediaRecorder(stream);
+                setMediaRecorder(newMediaRecorder);
+
+                let audioChunks = [];
+                newMediaRecorder.ondataavailable = event => { // This event is triggered when the MediaRecorder has an audio blob chunk available
+                    audioChunks.push(event.data);
+                };
+
+                newMediaRecorder.onstop = () => {
+                    const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                    onRecordingComplete(audioBlob);
+                    audioChunks = [];
+                    stream.getTracks().forEach(track => track.stop()); // Stop the microphone access
+                };
+
+                newMediaRecorder.start();
+                setIsRecording(true);
+            })
+            .catch(error => console.error("Error accessing media devices:", error));
+    };
+
+    const stopRecording = () => {
+        if (mediaRecorder) {
+            mediaRecorder.stop();
+            setIsRecording(false);
+        }
+    };
 
     return (
         <div>
-            <button onClick={isRecording ? stopRecording : startRecording}>
-                {isRecording ? 'Stop Recording' : 'Start Recording'}
-            </button>
-            {/* Display the audio data or recording status */}
+            {isRecording ? (
+                <button onClick={stopRecording}>Stop Recording</button>
+            ) : (
+                <button onClick={startRecording}>Start Recording</button>
+            )}
         </div>
     );
-};
+}
 
-export default AudioRecorderComponent;
+export default AudioRecorder;
