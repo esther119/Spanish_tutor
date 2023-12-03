@@ -9,6 +9,9 @@ function AudioRecorder({ onRecordingComplete }) {
             .then(stream => {
                 const newMediaRecorder = new MediaRecorder(stream);
                 setMediaRecorder(newMediaRecorder);
+                
+                newMediaRecorder.start();
+                setIsRecording(true);
 
                 let audioChunks = [];
                 newMediaRecorder.ondataavailable = event => { // This event is triggered when the MediaRecorder has an audio blob chunk available
@@ -16,14 +19,13 @@ function AudioRecorder({ onRecordingComplete }) {
                 };
 
                 newMediaRecorder.onstop = () => {
-                    const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                    const audioBlob = new Blob(audioChunks, { type: 'audio/flac' });
                     onRecordingComplete(audioBlob);
                     audioChunks = [];
                     stream.getTracks().forEach(track => track.stop()); // Stop the microphone access
                 };
 
-                newMediaRecorder.start();
-                setIsRecording(true);
+
             })
             .catch(error => console.error("Error accessing media devices:", error));
     };

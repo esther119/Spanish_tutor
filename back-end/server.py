@@ -56,7 +56,7 @@ def transcribe_file(audio_file) -> speech.RecognizeResponse:
     config = speech.RecognitionConfig(
         encoding=speech.RecognitionConfig.AudioEncoding.FLAC,
         sample_rate_hertz=48000,
-        audio_channel_count=2,
+        audio_channel_count=1,
         language_code="es-ES",
     )
 
