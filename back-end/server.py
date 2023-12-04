@@ -1,5 +1,6 @@
-from flask import Flask, request, request, jsonify
+from flask import Flask, request, request, jsonify, Response
 from google.cloud import speech
+from google.cloud import texttospeech
 import openai
 import os
 
@@ -18,7 +19,7 @@ def verify_credentials():
 
 
 # Define a route for the root URL ("/")
-@app.route("/hello", methods=['GET'])
+@app.route("/hello", methods=['POST'])
 def hello_world():
     return {'message': 'Hello, World!'}
 
@@ -51,28 +52,33 @@ def ai_response():
 
 @app.route('/transcribe', methods=['POST'])
 def transcribe_audio():
-    # Check if the post request has the file part
-    print('start transcribe audio function')
-    if 'file' not in request.files:
-        return 'No file part', 400
+    try:
+        # Check if the post request has the file part
+        print('start transcribe audio function')
+        if 'file' not in request.files:
+            return 'No file part', 400
 
-    file = request.files['file']
-    print('finish getting file')
+        file = request.files['file']
+        print('finish getting file')
 
-    # If the user does not select a file, the browser submits an
-    # empty file without a filename.
-    if file.filename == '':
-        return 'No selected file', 400
+        # If the user does not select a file, the browser submits an
+        # empty file without a filename.
+        if file.filename == '':
+            return 'No selected file', 400
 
-    if file:
-        # Call the transcribe function
-        print('start transcribe file function')
-        response = transcribe_file(file)
-        transcript = response.results[0].alternatives[0].transcript
-        print('transcript', transcript)
-        # transcripts = [result.alternatives[0].transcript for result in response.results]
-        # return jsonify(transcripts)
-        return transcript, 200
+        if file:
+            # Call the transcribe function
+            print('start transcribe file function')
+            response = transcribe_file(file)
+            transcript = response.results[0].alternatives[0].transcript
+            # transcripts = [result.alternatives[0].transcript for result in response.results]
+            # return jsonify(transcripts)
+            return 'file received', 200
+
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return jsonify({"error": str(e)}), 500
 
 def transcribe_file(audio_file) -> speech.RecognizeResponse:
     """Transcribe the given audio file."""
@@ -84,7 +90,7 @@ def transcribe_file(audio_file) -> speech.RecognizeResponse:
     config = speech.RecognitionConfig(
         encoding=speech.RecognitionConfig.AudioEncoding.FLAC,
         sample_rate_hertz=48000,
-        audio_channel_count=2,
+        audio_channel_count=1,
         language_code="es-ES",
     )
 
@@ -92,9 +98,9 @@ def transcribe_file(audio_file) -> speech.RecognizeResponse:
     print('this is the response from google api', response)
     if not response.results:
         print("No results returned from the speech recognition service.")
-    else:
-        for result in response.results:
-            print(f"Transcript: {result.alternatives[0].transcript}")
+    # else:
+    #     for result in response.results:
+    #         print(f"Transcript: {result.alternatives[0].transcript}")
     return response
 
 openai.api_key = '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'
@@ -111,6 +117,38 @@ def openai_call(transcript):
         ],
     )
     return response.choices[0].message
+
+
+@app.route('/textToSpeech', methods=['POST'])
+def synthesize_text(text='Hola, me llamo Juan'):
+    """Synthesizes speech from the input string of text."""
+    
+
+    client = texttospeech.TextToSpeechClient()
+
+    input_text = texttospeech.SynthesisInput(text=text)
+
+    # Note: the voice can also be specified by name.
+    # Names of voices can be retrieved with client.list_voices().
+    voice = texttospeech.VoiceSelectionParams(
+        language_code="es-ES",
+        name="es-ES-Standard-B",
+    )
+
+    audio_config = texttospeech.AudioConfig(
+        audio_encoding=texttospeech.AudioEncoding.MP3
+    )
+
+    response = client.synthesize_speech(
+        request={"input": input_text, "voice": voice, "audio_config": audio_config}
+    )
+
+    # The response's audio_content is binary.
+    with open("output.mp3", "wb") as out:
+        out.write(response.audio_content)
+        print('Audio content written to file "output.mp3"')
+    return Response(response.audio_content, content_type="audio/mp3")
+
 
 if __name__ == '__main__':
     app.run(debug=True)
