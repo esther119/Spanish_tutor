@@ -106,7 +106,23 @@ def transcribe_file(audio_file) -> speech.RecognizeResponse:
     #         print(f"Transcript: {result.alternatives[0].transcript}")
     return response
 
-openai.api_key = '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'
+@app.route('/chat', methods=['POST'])
+def chatbot():
+    data = request.json
+    user_message = data.get('message')
+
+    messages = [
+        {"role": "system", "content": "You are my friend that have a conversation with me."},
+        {"role": "user", "content": user_message}
+    ]
+
+    response = openai.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=messages
+    )
+
+    chat_message = response.choices[0].message.content
+    return jsonify({"response": chat_message})
 
 def openai_call(transcript):
     response = openai.chat.completions.create(
@@ -115,7 +131,7 @@ def openai_call(transcript):
         messages=[
             {
                 "role": "system",
-                "content": "Eres un amigo de España. Estás teniendo una conversación con tu amigo."
+                "content": "Eres un amigo de España. Estás teniendo una conversación con tu amigo. Usa española fácil."
             }, 
             {
                 "role": "user",

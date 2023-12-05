@@ -3,6 +3,7 @@ import AudioRecorder from "./AudioRecorderComponent";
 import React, { useState, useEffect } from "react";
 import FileUpload from "./fileUpload";
 import TextToSpeech from "./textToSpeech";
+import Chat from "./chatComponent";
 
 function App() {
   const [data, setData] = useState([{}]);
@@ -76,6 +77,7 @@ function App() {
         <AudioRecorder onRecordingComplete={handleAudioComplete} />
         <FileUpload />
         <TextToSpeech />
+        <Chat />
 
       </header>
     </div>
