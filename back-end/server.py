@@ -60,6 +60,9 @@ def transcribe_audio():
 
         file = request.files['file']
         print('finish getting file')
+        # Get the content type (MIME type) of the file
+        file_type = file.content_type
+        print('File type:', file_type)        
 
         # If the user does not select a file, the browser submits an
         # empty file without a filename.
@@ -111,8 +114,12 @@ def openai_call(transcript):
         temperature=0.7,
         messages=[
             {
+                "role": "system",
+                "content": "Eres un amigo de España. Estás teniendo una conversación con tu amigo."
+            }, 
+            {
                 "role": "user",
-                "content": f"Respond to the following text: {transcript}"
+                "content": f"{transcript}"
             }
         ],
     )

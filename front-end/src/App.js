@@ -38,14 +38,14 @@ function App() {
     const audio = new Audio(audioUrl);
     audio.play();
     // Create a link and set the URL as the href attribute
-    // const downloadLink = document.createElement("a");
-    // downloadLink.href = audioUrl;
-    // downloadLink.download = "recording"; // or the format you are using
+    const downloadLink = document.createElement("a");
+    downloadLink.href = audioUrl;
+    downloadLink.download = "recording"; // or the format you are using
 
-    //  // Append the link to the body (can be hidden), simulate click and remove it
-    // document.body.appendChild(downloadLink);
-    // downloadLink.click();
-    // document.body.removeChild(downloadLink);
+     // Append the link to the body (can be hidden), simulate click and remove it
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
 
     // Optional: Log the audio URL and MIME type
     console.log("Audio URL:", audioUrl);
