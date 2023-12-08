@@ -28,21 +28,23 @@ def ai_response():
     try:
         # Assuming transcribe_audio raises an exception on failure
         transcript = transcribe_audio()
+        if transcript[1] == 200:  # Checking if the status code is 200
+            transcript = transcript[0].get_json()  # This should give you the transcript in JSON format
+            print("Transcript:", transcript)
+        else:
+            print("Transcription failed with status code:", transcript[1])        
         
-        # Check if the transcript is empty or None
-        if not transcript:
-            return jsonify({"error": "Transcription failed or returned empty result"}), 400
 
         # Assuming openai_call raises an exception on failure
         response = openai_call(transcript)
-
         # Check if the OpenAI response is empty or None
         if not response:
-            return jsonify({"error": "OpenAI API call failed or returned empty result"}), 500
-        
+            return jsonify({"error": "OpenAI API call failed or returned empty result"}), 500        
         text = response.content
         print('ai response', text)
-        return text, 200
+        audio_output = synthesize_text(text)
+        
+        return audio_output, 200
 
     except Exception as e:
         # General exception catch, logging the exception could be helpful
@@ -77,9 +79,7 @@ def transcribe_audio():
             if response.results: 
                 transcript = response.results[0].alternatives[0].transcript
                 print('transcript', transcript)
-            # transcripts = [result.alternatives[0].transcript for result in response.results]
-            # return jsonify(transcripts)
-            return jsonify(transcript), 200
+                return jsonify(transcript), 200
 
 
     except Exception as e:
@@ -174,7 +174,7 @@ def synthesize_text(text='Hola, me llamo Juan'):
     response = client.synthesize_speech(
         request={"input": input_text, "voice": voice, "audio_config": audio_config}
     )
-
+    # print('text to speech response', response)
     # The response's audio_content is binary.
     with open("output.mp3", "wb") as out:
         out.write(response.audio_content)

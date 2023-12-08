@@ -39,7 +39,7 @@ function App() {
 
     // Create a new Audio object and play it
     const audio = new Audio(audioUrl);
-    audio.play();
+    // audio.play();
     console.log("audio.src", audio.src);
     // Create a link and set the URL as the href attribute
     const downloadLink = document.createElement("a");
@@ -54,17 +54,40 @@ function App() {
     formData.append("file", audioBlob); // Change 'recording.webm' to the format you are using
 
 
+  //   fetch("/ai_response", {
+  //     method: "POST",
+  //     body: formData,
+  //   })
+  //     .then((response) => response.blob())
+  //     .then((data) => {
+  //       console.log("Response from Google Speech-to-Text:", data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error processing audio", error);
+  //     });
+  // };
     fetch("/ai_response", {
       method: "POST",
       body: formData,
     })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Response from Google Speech-to-Text:", data);
-      })
-      .catch((error) => {
-        console.error("Error processing audio", error);
-      });
+    .then((response) => response.blob())  // Assuming the response is a blob
+    .then((audioResponseBlob) => {
+      // Create a URL for the audio response blob
+      const audioResponseUrl = URL.createObjectURL(audioResponseBlob);
+
+      // Create a new Audio object and play it
+      const audioResponse = new Audio(audioResponseUrl);
+      audioResponse.play();
+
+      // Update state to reflect the new audio URL
+      setstoreAudioUrl(audioResponseUrl);
+
+      // Optional: Log the audio URL
+      console.log("AI Response Audio URL:", audioResponseUrl);
+    })
+    .catch((error) => {
+      console.error("Error processing audio", error);
+    });
   };
 
   return (
