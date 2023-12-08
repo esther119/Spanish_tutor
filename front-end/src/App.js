@@ -30,7 +30,9 @@ function App() {
   //     console.log("Audio MIME type:", audio.type);
   //     audio.play();
   // };
+  const [storeAudioUrl, setstoreAudioUrl] = useState("");
   const handleAudioComplete = (audioBlob) => {
+
     // Send the audioBlob to your server for processing
     // Create a URL for the audio blob
     const audioUrl = URL.createObjectURL(audioBlob);
@@ -38,15 +40,12 @@ function App() {
     // Create a new Audio object and play it
     const audio = new Audio(audioUrl);
     audio.play();
+    console.log("audio.src", audio.src);
     // Create a link and set the URL as the href attribute
     const downloadLink = document.createElement("a");
     downloadLink.href = audioUrl;
+    setstoreAudioUrl(audioUrl)
     downloadLink.download = "recording"; // or the format you are using
-
-     // Append the link to the body (can be hidden), simulate click and remove it
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-    document.body.removeChild(downloadLink);
 
     // Optional: Log the audio URL and MIME type
     console.log("Audio URL:", audioUrl);
@@ -54,7 +53,8 @@ function App() {
     const formData = new FormData();
     formData.append("file", audioBlob); // Change 'recording.webm' to the format you are using
 
-    fetch("/transcribe", {
+
+    fetch("/ai_response", {
       method: "POST",
       body: formData,
     })
@@ -74,6 +74,12 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        {
+        !!storeAudioUrl.length && 
+          <a href={storeAudioUrl} download="audio_name">
+            Download sound
+          </a>
+        }
         <AudioRecorder onRecordingComplete={handleAudioComplete} />
         <FileUpload />
         <TextToSpeech />

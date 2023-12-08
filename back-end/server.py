@@ -56,7 +56,7 @@ def transcribe_audio():
         # Check if the post request has the file part
         print('start transcribe audio function')
         if 'file' not in request.files:
-            return 'No file part', 400
+            return jsonify('No file'), 400
 
         file = request.files['file']
         print('finish getting file')
@@ -67,16 +67,19 @@ def transcribe_audio():
         # If the user does not select a file, the browser submits an
         # empty file without a filename.
         if file.filename == '':
-            return 'No selected file', 400
+            return jsonify('No selected file'), 400
 
         if file:
             # Call the transcribe function
             print('start transcribe file function')
             response = transcribe_file(file)
-            transcript = response.results[0].alternatives[0].transcript
+            print('finish transcribe file function', response)
+            if response.results: 
+                transcript = response.results[0].alternatives[0].transcript
+                print('transcript', transcript)
             # transcripts = [result.alternatives[0].transcript for result in response.results]
             # return jsonify(transcripts)
-            return 'file received', 200
+            return jsonify(transcript), 200
 
 
     except Exception as e:
@@ -85,26 +88,32 @@ def transcribe_audio():
 
 def transcribe_file(audio_file) -> speech.RecognizeResponse:
     """Transcribe the given audio file."""
-    client = speech.SpeechClient()
+    try:
+        client = speech.SpeechClient()
 
-    content = audio_file.read()
+        content = audio_file.read()
+        # print('content', content)
 
-    audio = speech.RecognitionAudio(content=content)
-    config = speech.RecognitionConfig(
-        encoding=speech.RecognitionConfig.AudioEncoding.FLAC,
-        sample_rate_hertz=48000,
-        audio_channel_count=1,
-        language_code="es-ES",
-    )
+        audio = speech.RecognitionAudio(content=content)
+        config = speech.RecognitionConfig(
+            encoding=speech.RecognitionConfig.AudioEncoding.WEBM_OPUS,
+            sample_rate_hertz=48000,
+            audio_channel_count=1,
+            language_code="es-ES",
+            model = 'latest_short',
+        )
 
-    response = client.recognize(config=config, audio=audio)
-    print('this is the response from google api', response)
-    if not response.results:
-        print("No results returned from the speech recognition service.")
-    # else:
-    #     for result in response.results:
-    #         print(f"Transcript: {result.alternatives[0].transcript}")
-    return response
+        response = client.recognize(config=config, audio=audio)
+        print('this is the response from google api', response)
+        if not response.results:
+            print("No results returned from the speech recognition service.")
+        else:
+            for result in response.results:
+                print(f"Transcript: {result.alternatives[0].transcript}")
+        return response
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+
 
 @app.route('/chat', methods=['POST'])
 def chatbot():
@@ -131,7 +140,7 @@ def openai_call(transcript):
         messages=[
             {
                 "role": "system",
-                "content": "Eres un amigo de España. Estás teniendo una conversación con tu amigo. Usa española fácil."
+                "content": "Eres mi amigo de España. Eres amigo de España. Le respondes a tu amigo en español fácil."
             }, 
             {
                 "role": "user",

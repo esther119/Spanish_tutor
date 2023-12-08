@@ -19,7 +19,7 @@ const useAudioRecorder = () => {
                 };
 
                 recorder.onstop = () => {
-                    const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                    const audioBlob = new Blob(audioChunks, { type: 'audio/flac' });
                     setAudioData(audioBlob);
                     audioChunks = [];
                 };
