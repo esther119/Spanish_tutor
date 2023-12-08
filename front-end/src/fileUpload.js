@@ -11,7 +11,7 @@ function FileUpload() {
         const formData = new FormData();
         formData.append('file', selectedFile);
 
-        fetch('/ai_response', {
+        fetch('/transcribe', {
             method: 'POST',
             body: formData,
             // Note: Don't set Content-Type header when using FormData
