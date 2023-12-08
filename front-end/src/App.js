@@ -24,11 +24,11 @@ function App() {
         console.error("Error:", error);
       });
   }, []);
-  //   const handleAudioComplete = (audioBlob) => {
-  //     const audioUrl = URL.createObjectURL(audioBlob);
-  //     const audio = new Audio(audioUrl);
+    // const handleAudioComplete = (audioBlob) => {
+    // const audioUrl = URL.createObjectURL(audioBlob);
+    // const audio = new Audio(audioUrl);
   //     console.log("Audio MIME type:", audio.type);
-  //     audio.play();
+      // audio.play();
   // };
   const [storeAudioUrl, setstoreAudioUrl] = useState("");
   const handleAudioComplete = (audioBlob) => {
@@ -39,7 +39,7 @@ function App() {
 
     // Create a new Audio object and play it
     const audio = new Audio(audioUrl);
-    // audio.play();
+    audio.play();
     console.log("audio.src", audio.src);
     // Create a link and set the URL as the href attribute
     const downloadLink = document.createElement("a");
