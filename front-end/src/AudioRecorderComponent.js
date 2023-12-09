@@ -37,39 +37,6 @@ function AudioRecorder({ onRecordingComplete }) {
     }
   };
 
-//     <div>
-//       <div>
-//         {isRecording ? (
-//           <button
-//             class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border-[1.5px] border-gray-800 rounded shadow"
-//             onClick={stopRecording}
-//           >
-//             Stop Recording
-//           </button>
-//         ) : (
-//           <button
-//             class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border-[1.5px] border-gray-800 rounded shadow"
-//             onClick={startRecording}
-//           >
-//             Start Recording
-//           </button>
-//         )}
-//       </div>
-//       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 mb-8">
-//         <div className="bg-white p-4 border border-gray-300 rounded-lg shadow-lg">
-//           <p className="font-bold text-lg">Past Tense Grammar</p>
-//           <p>Conjugation table for Spanish Past Tense.</p>
-//           <button
-//             className="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
-//             //   onClick={() => startLearning('Grammar')}
-//           >
-//             Start Learning
-//           </button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
 return (
     <div className="p-6">
       <div className="flex justify-center mb-8">
@@ -82,21 +49,6 @@ return (
           {isRecording ? 'Stop Recording' : 'Start Recording'}
         </button>
       </div>
-    <div className="flex justify-center">
-      <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
-        <div className="bg-white p-6 border border-gray-300 rounded-lg shadow-lg">
-          <h3 className="text-lg font-bold mb-3">Past Tense Grammar</h3>
-          <p className="mb-4">Conjugation table for Spanish Past Tense.</p>
-          <button
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
-            // onClick={() => startLearning('Grammar')}
-          >
-            Start Learning
-          </button>
-        </div>
-        {/* Add more grid items here if needed */}
-      </div>
-    </div>
     </div>
   );
 }
