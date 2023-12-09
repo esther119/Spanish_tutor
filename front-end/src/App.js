@@ -1,6 +1,6 @@
 import "./App.css";
 import AudioRecorder from "./AudioRecorderComponent";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import FileUpload from "./fileUpload";
 import TextToSpeech from "./textToSpeech";
 import Chat from "./chatComponent";
@@ -11,19 +11,7 @@ function App() {
 
   console.log("hello API URL:", apiUrl);
 
-  useEffect(() => {
-    fetch("/hello", {
-      method: "POST",
-      body: 'hi',
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Hello api test:", data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  }, []);
+
     // const handleAudioComplete = (audioBlob) => {
     // const audioUrl = URL.createObjectURL(audioBlob);
     // const audio = new Audio(audioUrl);
@@ -88,28 +76,25 @@ function App() {
     .catch((error) => {
       console.error("Error processing audio", error);
     });
+
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        {
+    <div className="bg-gray-100 text-gray-800 min-h-screen p-8">
+        <h1 className="text-4xl font-bold mb-6">Spanish Tutor App</h1>
+        <div className="mb-8">
+        {/* {
         !!storeAudioUrl.length && 
           <a href={storeAudioUrl} download="audio_name">
             Download sound
           </a>
-        }
+        } */}
         <AudioRecorder onRecordingComplete={handleAudioComplete} />
         <FileUpload />
         <TextToSpeech />
         <Chat />
-
-      </header>
-    </div>
+        </div>
+    </div>  
   );
 }
 
