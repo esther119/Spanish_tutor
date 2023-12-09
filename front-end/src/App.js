@@ -81,8 +81,10 @@ function App() {
 
   return (
     <div className="bg-gray-100 text-gray-800 min-h-screen p-8">
-        <h1 className="text-4xl font-bold mb-6">Spanish Tutor App</h1>
-        <div className="mb-8">
+      <div className="flex justify-center">
+        <h1 className="text-4xl font-bold">Spanish Tutor App</h1>
+        </div>
+        
         {/* {
         !!storeAudioUrl.length && 
           <a href={storeAudioUrl} download="audio_name">
@@ -94,7 +96,7 @@ function App() {
         <TextToSpeech />
         <Chat />
         </div>
-    </div>  
+
   );
 }
 
