@@ -107,7 +107,7 @@ function App() {
             />
             </div>
           } />
-          <Route path="/pastTense" element={
+          <Route path="/pastTenseTable" element={
             <PastTenseTable data ={tableData}/>
           } />
         </Routes>
