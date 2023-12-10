@@ -5,7 +5,7 @@ import FileUpload from "./fileUpload";
 import TextToSpeech from "./textToSpeech";
 import Chat from "./chatComponent";
 import PastTenseComponent from "./pastTenseComponent";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PastTenseTable from "./pastTenseTable";
 
 function App() {
@@ -78,8 +78,37 @@ function App() {
       });
   };
   const tableData = [
-    { column1: 'Row 1 Column 1', column2: 'Row 1 Column 2' },
-    { column1: 'Row 2 Column 1', column2: 'Row 2 Column 2' },
+    { column0: "yo", column1: "quedé", column2: "comí", column3: "escribí" },
+    {
+      column0: "tú",
+      column1: "quedaste",
+      column2: "comiste",
+      column3: "escribiste",
+    },
+    {
+      column0: "él/ella",
+      column1: "quedó",
+      column2: "comío",
+      column3: "escribió",
+    },
+    {
+      column0: "nosotros",
+      column1: "quedamos",
+      column2: "comimos",
+      column3: "escribimos",
+    },
+    {
+      column0: "ustedes",
+      column1: "quedaron",
+      column2: "comieron",
+      column3: "escribieron",
+    },
+    {
+      column0: "ellos/ellas",
+      column1: "quedaron",
+      column2: "comieron",
+      column3: "escribieron",
+    },
     // ... more rows
   ];
 
@@ -97,19 +126,28 @@ function App() {
           </a>
         } */}
         <Routes>
-          <Route exact path="/" element={
-            <div>
-          <AudioRecorder onRecordingComplete={handleAudioComplete} />
-            <PastTenseComponent
-              title="Past Tense Grammar"
-              description="Conjugation table for Spanish Past Tense."
-              buttonText="Start Learning"
-            />
-            </div>
-          } />
-          <Route path="/pastTenseTable" element={
-            <PastTenseTable data ={tableData}/>
-          } />
+          <Route
+            exact
+            path="/"
+            element={
+              <div>
+                <AudioRecorder onRecordingComplete={handleAudioComplete} />
+                <PastTenseComponent
+                  title="Past Tense Grammar"
+                  description="Conjugation table for Spanish Past Tense."
+                  buttonText="Start Learning"
+                />
+              </div>
+            }
+          />
+          <Route
+            path="/pastTenseTable"
+            element={
+              <div className="flex justify-center mt-8">
+                <PastTenseTable data={tableData} />
+              </div>
+            }
+          />
         </Routes>
         <FileUpload />
         <TextToSpeech />
