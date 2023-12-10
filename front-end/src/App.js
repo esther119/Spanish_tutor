@@ -7,6 +7,28 @@ import Chat from "./chatComponent";
 import PastTenseComponent from "./pastTenseComponent";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PastTenseTable from "./pastTenseTable";
+import FlashcardPage from "./flashCardPage";
+
+const sampleFlashCards = [
+  {
+      id: 1,
+      front: "Quedarse",
+      back: "Quedé",
+      flipped: false
+  },
+  {
+      id: 2,
+      front: "Comer",
+      back: "Comí",
+      flipped: false
+  },
+  {
+      id: 3,
+      front: "Escribir",
+      back: "Escribí",
+      flipped: false
+  }
+];
 
 function App() {
   const [data, setData] = useState([{}]);
@@ -20,6 +42,7 @@ function App() {
   //     console.log("Audio MIME type:", audio.type);
   // audio.play();
   // };
+  const [flashCards, setFlashCards] = useState(sampleFlashCards);
   const [storeAudioUrl, setstoreAudioUrl] = useState("");
   const handleAudioComplete = (audioBlob) => {
     // Send the audioBlob to your server for processing
@@ -148,6 +171,7 @@ function App() {
               </div>
             }
           />
+          <Route path="/flashcard" element={<FlashcardPage FlashCardsList={sampleFlashCards}/>}/>
         </Routes>
         <FileUpload />
         <TextToSpeech />
