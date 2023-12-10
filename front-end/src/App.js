@@ -116,7 +116,7 @@ function App() {
     <Router>
       <div className="bg-gray-100 text-gray-800 min-h-screen p-8">
         <div className="flex justify-center">
-          <h1 className="text-4xl font-bold">Spanish Tutor App</h1>
+          <h1 className="text-4xl font-bold">Free Spanish Tutor</h1>
         </div>
 
         {/* {
