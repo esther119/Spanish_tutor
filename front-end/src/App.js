@@ -7,27 +7,33 @@ import Chat from "./chatComponent";
 import PastTenseComponent from "./pastTenseComponent";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PastTenseTable from "./pastTenseTable";
-import FlashcardPage from "./flashCardPage";
+import FlashCardPage from "./flashCardPage";
 
 const sampleFlashCards = [
   {
       id: 1,
-      front: "Quedarse",
-      back: "Quedé",
+      front: <img src='/images/manzana.png' alt="Description" className="object-contain"/>,
+      back: "manzana",
       flipped: false
   },
   {
       id: 2,
-      front: "Comer",
-      back: "Comí",
+      front: <img src='/images/fracasar.png' alt="Description" className="object-fit"/>,
+      back: "fracasar",
       flipped: false
   },
   {
       id: 3,
-      front: "Escribir",
-      back: "Escribí",
+      front: <img src='/images/obtener.png' alt="Description" className="object-fit"/>,
+      back: "obtener",
       flipped: false
-  }
+  },
+  {
+    id: 3,
+    front: <img src='/images/acabado.png' alt="Description" className="object-fit"/>,
+    back: "acabado",
+    flipped: false
+}
 ];
 
 function App() {
@@ -139,7 +145,7 @@ function App() {
     <Router>
       <div className="bg-gray-100 text-gray-800 min-h-screen p-8">
         <div className="flex justify-center">
-          <h1 className="text-4xl font-bold">Free Spanish Tutor</h1>
+          <h1 className="text-4xl font-bold">Spanish Tutor</h1>
         </div>
 
         {/* {
@@ -171,7 +177,7 @@ function App() {
               </div>
             }
           />
-          <Route path="/flashcard" element={<FlashcardPage FlashCardsList={sampleFlashCards}/>}/>
+          <Route path="/flashcard" element={<FlashCardPage FlashCardsList={sampleFlashCards}/>}/>
         </Routes>
         <FileUpload />
         <TextToSpeech />

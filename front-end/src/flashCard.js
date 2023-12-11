@@ -9,10 +9,31 @@ export default function FlashCard({ flashCard }) {
   };
 
   return (
-    <div className="flashcard" onClick={handleClick}>
-        {flip ? flashCard.front : flashCard.back}
-      {/* <div className="front">{flashCard.front}</div>
-      <div className="back">{flashCard.back}</div> */}
+    <div
+      className='relative m-8 w-72 h-72 overflow-hidden transform 
+                transition duration-700 ease-in-out bg-white rounded-xl shadow-lg
+                cursor-pointer'
+      onClick={handleClick}
+    >
+      <div
+        className={`absolute w-full h-full flex items-center justify-center 
+                    text-2xl font-semibold text-gray-700 
+                    transition duration-700 ease-in-out
+                    backface-hidden ${flip ? "rotate-y-0" : "rotate-y-180"}`}
+      >
+        {flashCard.back}
+      </div>
+
+      <div
+        className={`absolute w-full h-full flex items-center justify-center 
+                      text-xl font-semibold text-gray-700 
+                      transition duration-700 ease-in-out
+                      backface-hidden rotate-y-180 ${
+                        flip ? "rotate-y-180" : "rotate-y-360"
+                      }`}
+      >
+        {flashCard.front}
+      </div>
     </div>
   );
 }
