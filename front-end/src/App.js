@@ -33,8 +33,143 @@ const sampleFlashCards = [
     front: <img src='/images/acabado.png' alt="Description" className="object-fit"/>,
     back: "acabado",
     flipped: false
+},
+  {
+      id: 4,
+      front: <img src='/images/alaridos.png' alt="Description" className="object-fit"/>,
+      back: "alaridos",
+      flipped: false
 }
+  ,
+  {
+      id: 5,
+      front: <img src='/images/bromas.png' alt="Description" className="object-fit"/>,
+      back: "bromas",
+      flipped: false
+  },
+  {
+      id: 6,
+      front: <img src='/images/caer.png' alt="Description" className="object-fit"/>,
+      back: "caer",
+      flipped: false
+  },
+  {
+      id: 7,
+      front: <img src='/images/castigar.png' alt="Description" className="object-fit"/>,
+      back: "castigar",
+      flipped: false
+  },
+  {
+      id: 8,
+      front: <img src='/images/desastre.png' alt="Description" className="object-fit"/>,
+      back: "desastre",
+      flipped: false
+  },
+  {
+      id: 9,
+      front: <img src='/images/doler.png' alt="Description" className="object-fit"/>,
+      back: "doler",
+      flipped: false
+  },
+  {
+      id: 10,
+      front: <img src='/images/enojado.png' alt="Description" className="object-fit"/>,
+      back: "enojado",
+      flipped: false
+  },
+  {
+      id: 11,
+      front: <img src='/images/enseguida.png' alt="Description" className="object-fit"/>,
+      back: "enseguida",
+      flipped: false
+  },
+  {
+      id: 12,
+      front: <img src='/images/grito.png' alt="Description" className="object-fit"/>,
+      back: "gritó",
+      flipped: false
+  },
+  {
+      id: 13,
+      front: <img src='/images/seca.png' alt="Description" className="object-fit"/>,
+      back: "la boca seca",
+      flipped: false
+  },
+  {
+      id: 14,
+      front: <img src='/images/lechuza.png' alt="Description" className="object-fit"/>,
+      back: "lechuza",
+      flipped: false
+  },
+  {
+      id: 15,
+      front: <img src='/images/mantar.png' alt="Description" className="object-fit"/>,
+      back: "mantar",
+      flipped: false
+  },
+  {
+      id: 16,
+      front: <img src='/images/mentiras.png' alt="Description" className="object-fit"/>,
+      back: "mentiras",
+      flipped: false
+  },
+  {
+      id: 17,
+      front: <img src='/images/pajaros.png' alt="Description" className="object-fit"/>,
+      back: "pájaros",
+      flipped: false
+  },
+  {
+      id: 18,
+      front: <img src='/images/poer.png' alt="Description" className="object-fit"/>,
+      back: "poer",
+      flipped: false
+  },
+  {
+      id: 19,
+      front: <img src='/images/prometio.png' alt="Description" className="object-fit"/>,
+      back: "prometió",
+      flipped: false
+  },
+  {
+      id: 20,
+      front: <img src='/images/ruborizando.png' alt="Description" className="object-fit"/>,
+      back: "ruborizando",
+      flipped: false
+  },
+  {
+      id: 21,
+      front: <img src='/images/ruego.png' alt="Description" className="object-fit"/>,
+      back: "ruego",
+      flipped: false
+  },
+  {
+      id: 22,
+      front: <img src='/images/suelo.png' alt="Description" className="object-fit"/>,
+      back: "suelo",
+      flipped: false
+  },
+  {
+      id: 23,
+      front: <img src='/images/temblar.png' alt="Description" className="object-fit"/>,
+      back: "temblar",
+      flipped: false
+  },
+  {
+      id: 24,
+      front: <img src='/images/trapero.png' alt="Description" className="object-fit"/>,
+      back: "trapero",
+      flipped: false
+  },
+  {
+      id: 25,
+      front: <img src='/images/triunfo.png' alt="Description" className="object-fit"/>,
+      back: "triunfo",
+      flipped: false
+  }
+
 ];
+
 
 function App() {
   const [data, setData] = useState([{}]);
@@ -179,9 +314,9 @@ function App() {
           />
           <Route path="/flashcard" element={<FlashCardPage FlashCardsList={sampleFlashCards}/>}/>
         </Routes>
-        <FileUpload />
+        {/* <FileUpload />
         <TextToSpeech />
-        <Chat />
+        <Chat /> */}
       </div>
     </Router>
   );
