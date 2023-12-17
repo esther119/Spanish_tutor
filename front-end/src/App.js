@@ -31,7 +31,7 @@ const sampleFlashCards = [
   {
     id: 3,
     front: <img src='/images/acabado.png' alt="Description" className="object-fit"/>,
-    back: "acabado",
+    back: "acabar",
     flipped: false
 },
   {
@@ -128,19 +128,19 @@ const sampleFlashCards = [
   {
       id: 19,
       front: <img src='/images/prometio.png' alt="Description" className="object-fit"/>,
-      back: "prometió",
+      back: "prometer",
       flipped: false
   },
   {
       id: 20,
       front: <img src='/images/ruborizando.png' alt="Description" className="object-fit"/>,
-      back: "ruborizando",
+      back: "rubor",
       flipped: false
   },
   {
       id: 21,
       front: <img src='/images/ruego.png' alt="Description" className="object-fit"/>,
-      back: "ruego",
+      back: "rogar",
       flipped: false
   },
   {
