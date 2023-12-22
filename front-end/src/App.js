@@ -166,7 +166,102 @@ const sampleFlashCards = [
       front: <img src='/images/triunfo.png' alt="Description" className="object-fit"/>,
       back: "triunfo",
       flipped: false
+  },
+  {
+      id: 26,
+      front: <img src='/images/acarrear.png' alt="Description" className="object-fit"/>,
+      back: "acarrear",
+      flipped: false
+  },
+  {
+      id: 27,
+      front: <img src='/images/aguejero.png' alt="Description" className="object-fit"/>,
+      back: "aguejero",
+      flipped: false
+  },
+  {
+      id: 28,
+      front: <img src='/images/blandir.png' alt="Description" className="object-fit"/>,
+      back: "blandir",
+      flipped: false
+  },
+  {
+      id: 29,
+      front: <img src='/images/buldog.png' alt="Description" className="object-fit"/>,
+      back: "buldog",
+      flipped: false
+  },
+  {
+      id: 30,
+      front: <img src='/images/cantidad.png' alt="Description" className="object-fit"/>,
+      back: "cantidad",
+      flipped: false
+  }, 
+  {
+    id: 31,
+    front: <img src='/images/coger.png' alt="Description" className="object-fit"/>,
+    back: "coger",
+    flipped: false
   }
+  ,
+  {
+    id: 32,
+    front: <img src='/images/duro.png' alt="Description" className="object-fit"/>,
+    back: "duro",
+    flipped: false
+  }
+  ,
+  {
+    id: 33,
+    front: <img src='/images/encerrar.png' alt="Description" className="object-fit"/>,
+    back: "encerrar",
+    flipped: false
+  }
+  ,
+  {
+    id: 34,
+    front: <img src='/images/menoresdeedad.png' alt="Description" className="object-fit"/>,
+    back: "menores de edad",
+    flipped: false
+  }
+  ,
+  {
+    id: 35,
+    front: <img src='/images/planeador.png' alt="Description" className="object-fit"/>,
+    back: "planeador",
+    flipped: false
+  }
+  ,
+  {
+    id: 36,
+    front: <img src='/images/reirse.png' alt="Description" className="object-fit"/>,
+    back: "reírse",
+    flipped: false
+  }
+  ,
+  {
+    id: 37,
+    front: <img src='/images/reja.png' alt="Description" className="object-fit"/>,
+    back: "reja",
+    flipped: false
+  }
+  ,
+  {
+    id: 38,
+    front: <img src='/images/riesgo.png' alt="Description" className="object-fit"/>,
+    back: "reisgo",
+    flipped: false
+  }
+  ,
+  {
+    id: 39,
+    front: <img src='/images/vista.png' alt="Description" className="object-fit"/>,
+    back: "vista",
+    flipped: false
+  }
+
+
+
 
 ];
 
