@@ -103,8 +103,8 @@ const sampleFlashCards = [
   },
   {
       id: 15,
-      front: <img src='/images/mantar.png' alt="Description" className="object-fit"/>,
-      back: "mantar",
+      front: <img src='/images/matar.png' alt="Description" className="object-fit"/>,
+      back: "matar",
       flipped: false
   },
   {
