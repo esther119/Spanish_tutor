@@ -1,0 +1,347 @@
+[
+  {
+    "id": 1,
+    "front": "<img src=../public/images/acabado.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "acabado"
+  },
+  {
+    "id": 2,
+    "front": "<img src=../public/images/acarrear.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "acarrear"
+  },
+  {
+    "id": 3,
+    "front": "<img src=../public/images/aguejero.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "aguejero"
+  },
+  {
+    "id": 4,
+    "front": "<img src=../public/images/alaridos.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "alaridos"
+  },
+  {
+    "id": 5,
+    "front": "<img src=../public/images/apiadado.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "apiadado"
+  },
+  {
+    "id": 6,
+    "front": "<img src=../public/images/asco.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "asco"
+  },
+  {
+    "id": 7,
+    "front": "<img src=../public/images/barrote.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "barrote"
+  },
+  {
+    "id": 8,
+    "front": "<img src=../public/images/basta.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "basta"
+  },
+  {
+    "id": 9,
+    "front": "<img src=../public/images/blandir.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "blandir"
+  },
+  {
+    "id": 10,
+    "front": "<img src=../public/images/bromas.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "bromas"
+  },
+  {
+    "id": 11,
+    "front": "<img src=../public/images/buldog.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "buldog"
+  },
+  {
+    "id": 12,
+    "front": "<img src=../public/images/caer.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "caer"
+  },
+  {
+    "id": 13,
+    "front": "<img src=../public/images/cantidad.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "cantidad"
+  },
+  {
+    "id": 14,
+    "front": "<img src=../public/images/cara.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "cara"
+  },
+  {
+    "id": 15,
+    "front": "<img src=../public/images/castigar.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "castigar"
+  },
+  {
+    "id": 16,
+    "front": "<img src=../public/images/cerebro.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "cerebro"
+  },
+  {
+    "id": 17,
+    "front": "<img src=../public/images/coger.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "coger"
+  },
+  {
+    "id": 18,
+    "front": "<img src=../public/images/cuenco.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "cuenco"
+  },
+  {
+    "id": 19,
+    "front": "<img src=../public/images/dejar.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "dejar"
+  },
+  {
+    "id": 20,
+    "front": "<img src=../public/images/desastre.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "desastre"
+  },
+  {
+    "id": 21,
+    "front": "<img src=../public/images/doler.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "doler"
+  },
+  {
+    "id": 22,
+    "front": "<img src=../public/images/duro.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "duro"
+  },
+  {
+    "id": 23,
+    "front": "<img src=../public/images/echar.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "echar"
+  },
+  {
+    "id": 24,
+    "front": "<img src=../public/images/empapar.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "empapar"
+  },
+  {
+    "id": 25,
+    "front": "<img src=../public/images/encerrar.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "encerrar"
+  },
+  {
+    "id": 26,
+    "front": "<img src=../public/images/enojado.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "enojado"
+  },
+  {
+    "id": 27,
+    "front": "<img src=../public/images/enseguida.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "enseguida"
+  },
+  {
+    "id": 28,
+    "front": "<img src=../public/images/entriste.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "entriste"
+  },
+  {
+    "id": 29,
+    "front": "<img src=../public/images/fracasar.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "fracasar"
+  },
+  {
+    "id": 30,
+    "front": "<img src=../public/images/grito.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "grito"
+  },
+  {
+    "id": 31,
+    "front": "<img src=../public/images/inanición.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "inanición"
+  },
+  {
+    "id": 32,
+    "front": "<img src=../public/images/jaula.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "jaula"
+  },
+  {
+    "id": 33,
+    "front": "<img src=../public/images/lechuza.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "lechuza"
+  },
+  {
+    "id": 34,
+    "front": "<img src=../public/images/maleta.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "maleta"
+  },
+  {
+    "id": 35,
+    "front": "<img src=../public/images/manera.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "manera"
+  },
+  {
+    "id": 36,
+    "front": "<img src=../public/images/manzana.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "manzana"
+  },
+  {
+    "id": 37,
+    "front": "<img src=../public/images/matar.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "matar"
+  },
+  {
+    "id": 38,
+    "front": "<img src=../public/images/menoresdeedad.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "menoresdeedad"
+  },
+  {
+    "id": 39,
+    "front": "<img src=../public/images/mentiras.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "mentiras"
+  },
+  {
+    "id": 40,
+    "front": "<img src=../public/images/morir.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "morir"
+  },
+  {
+    "id": 41,
+    "front": "<img src=../public/images/murciélago.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "murciélago"
+  },
+  {
+    "id": 42,
+    "front": "<img src=../public/images/obtener.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "obtener"
+  },
+  {
+    "id": 43,
+    "front": "<img src=../public/images/oscura.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "oscura"
+  },
+  {
+    "id": 44,
+    "front": "<img src=../public/images/pajaros.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "pajaros"
+  },
+  {
+    "id": 45,
+    "front": "<img src=../public/images/peca.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "peca"
+  },
+  {
+    "id": 46,
+    "front": "<img src=../public/images/penosa.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "penosa"
+  },
+  {
+    "id": 47,
+    "front": "<img src=../public/images/planeador.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "planeador"
+  },
+  {
+    "id": 48,
+    "front": "<img src=../public/images/plomeros.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "plomeros"
+  },
+  {
+    "id": 49,
+    "front": "<img src=../public/images/pluma.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "pluma"
+  },
+  {
+    "id": 50,
+    "front": "<img src=../public/images/poer.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "poer"
+  },
+  {
+    "id": 51,
+    "front": "<img src=../public/images/prometio.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "prometio"
+  },
+  {
+    "id": 52,
+    "front": "<img src=../public/images/reirse.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "reirse"
+  },
+  {
+    "id": 53,
+    "front": "<img src=../public/images/reja.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "reja"
+  },
+  {
+    "id": 54,
+    "front": "<img src=../public/images/riesgo.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "riesgo"
+  },
+  {
+    "id": 55,
+    "front": "<img src=../public/images/ruborizando.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "ruborizando"
+  },
+  {
+    "id": 56,
+    "front": "<img src=../public/images/ruego.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "ruego"
+  },
+  {
+    "id": 57,
+    "front": "<img src=../public/images/rugir.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "rugir"
+  },
+  {
+    "id": 58,
+    "front": "<img src=../public/images/salto.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "salto"
+  },
+  {
+    "id": 59,
+    "front": "<img src=../public/images/salvador.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "salvador"
+  },
+  {
+    "id": 60,
+    "front": "<img src=../public/images/seca.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "seca"
+  },
+  {
+    "id": 61,
+    "front": "<img src=../public/images/servir.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "servir"
+  },
+  {
+    "id": 62,
+    "front": "<img src=../public/images/suceso.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "suceso"
+  },
+  {
+    "id": 63,
+    "front": "<img src=../public/images/suelo.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "suelo"
+  },
+  {
+    "id": 64,
+    "front": "<img src=../public/images/temblar.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "temblar"
+  },
+  {
+    "id": 65,
+    "front": "<img src=../public/images/trapero.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "trapero"
+  },
+  {
+    "id": 66,
+    "front": "<img src=../public/images/tripas.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "tripas"
+  },
+  {
+    "id": 67,
+    "front": "<img src=../public/images/triunfo.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "triunfo"
+  },
+  {
+    "id": 68,
+    "front": "<img src=../public/images/tumbado.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "tumbado"
+  },
+  {
+    "id": 69,
+    "front": "<img src=../public/images/vista.png alt=\"Description\" className=\"object-contain\"/>",
+    "back": "vista"
+  }
+]
